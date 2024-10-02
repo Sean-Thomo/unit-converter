@@ -13,8 +13,8 @@ public class ConverterController {
         return "index"; // Ensure this matches your HTML file name
     }
 
-    @PostMapping("/convert")
-    public String convert(@RequestParam double amount, @RequestParam String currency, Model model) {
+    @PostMapping("/currency")
+    public String currency(@RequestParam double amount, @RequestParam String currency, Model model) {
         double convertedAmount = amount * getConversationalRate(currency);
         model.addAttribute("result", convertedAmount);
         return "index";
