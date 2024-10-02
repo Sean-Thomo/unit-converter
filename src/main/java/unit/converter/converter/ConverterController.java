@@ -15,7 +15,7 @@ public class ConverterController {
 
     @PostMapping("/currency")
     public String currency(@RequestParam double amount, @RequestParam String currency, Model model) {
-        double convertedAmount = amount * getConversationalRate(currency);
+        double convertedAmount = amount / getConversationalRate(currency);
         model.addAttribute("result", convertedAmount);
         return "index";
     }

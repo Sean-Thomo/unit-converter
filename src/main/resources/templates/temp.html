@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Unit Converter</title>
+		<link rel="stylesheet" href="/css/styles.css" />
+	</head>
+	<body>
+		<h1>Currency Converter</h1>
+
+		<a href="length.html">Length</a>
+		<a href="weight.html">Weight</a>
+		<a href="index.html">Currency</a>
+
+		<form action="/temp" method="post">
+			<label for="temp">Enter the temperature to convert</label>
+			<input type="number" name="temp" id="temp" required />
+			<label for="temperature"></label>
+			<select name="temperature" id="temperature">
+				<option value="USD">°C to °F</option>
+				<option value="EUR">°F to °C</option>
+			</select>
+			<button type="submit">Convert</button>
+		</form>
+
+		<div th:if="${result}">
+			<p>Converted Temperature: <span th:text="${result}"></span></p>
+		</div>
+	</body>
+</html>
