@@ -8,27 +8,23 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ConverterController {
-
     @GetMapping("/")
     public String home() {
-        return "index";
+        return "index"; // Ensure this matches your HTML file name
     }
 
     @PostMapping("/convert")
     public String convert(@RequestParam double amount, @RequestParam String currency, Model model) {
-        double convertedAmount = amount * getConversionalRate(currency);
+        double convertedAmount = amount * getConversationalRate(currency);
         model.addAttribute("result", convertedAmount);
         return "index";
     }
 
-    private double getConversionalRate(String currency) {
-        switch (currency) {
-            case "USD":
-                return 17.40;
-            case "EUR":
-                return 19.26;
-            default:
-                return 1;
-        }
+    private double getConversationalRate(String currency) {
+        return switch (currency) {
+            case "USD" -> 17.40;
+            case "EUR" -> 19.26;
+            default -> 1;
+        };
     }
 }
