@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Weight Converter</title>
 </head>
 <body>
+<h1>Weight Converter</h1>
 
+<a href="length.html">Length</a>
+<a href="temp.html">Temperature</a>
+<a href="/">Currency</a>
+
+<form action="/weight" method="post">
+    <label for="weight">Enter the weight to convert</label>
+    <input type="number" name="weight" id="weight" required />
+    <label for="weight"></label>
+    <select name="weight" id="number">
+        <option value="pounds">Lbs</option>
+        <option value="kilograms">Kg</option>
+        <option value="grams">g</option>
+    </select>
+    <button type="submit">Convert</button>
+</form>
+
+<div th:if="${result}">
+    <p>Converted Weight: <span th:text="${result}"></span></p>
+</div>
 </body>
 </html>
