@@ -58,6 +58,22 @@ public class ConverterController {
         return "weight";
     }
 
+    @PostMapping("weight")
+    public String weight(@RequestParam double weight, @RequestParam String unit, Model model) {
+        double convertedWeight = getWeightConversion(weight, unit);
+        model.addAttribute("result", convertedWeight);
+        return "weight";
+    }
+
+    private double getWeightConversion(double weight, String unit) {
+        return switch (unit) {
+            case "kilograms" -> weight / 2.20462;
+            case "pounds" -> weight * 2.205;
+            case "grams" -> weight / 1000;
+            default -> 1;
+        };
+    }
+
     private double getTempConversion(Double temp, String temperature) {
         return switch (temperature) {
             case "celsius" -> (temp * 9 / 5) + 32;
