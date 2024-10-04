@@ -6,5 +6,27 @@
 </head>
 <body>
 
+    <h1>Length Converter</h1>
+
+    <a href="temp">Temprature</a>
+    <a href="weight">Weight</a>
+    <a href="/">Currency</a>
+
+    <form action="/length" method="post">
+        <label for="length">Enter the length to convert</label>
+        <input type="number" name="length" id="length" required />
+        <label for="unit"></label>
+        <select name="unit" id="unit">
+            <option value="celsius">cm</option>
+            <option value="fahrenheit">meters</option>
+            <option value="fahrenheit">km</option>
+        </select>
+        <button type="submit">Convert</button>
+    </form>
+
+    <div th:if="${result}">
+        <p>Converted Temperature: <span th:text="${result}"></span></p>
+    </div>
+
 </body>
 </html>
