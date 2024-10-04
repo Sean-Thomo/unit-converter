@@ -26,8 +26,8 @@ public class ConverterController {
     }
 
     @PostMapping("/temp")
-    public String temp(@RequestParam double temp, @RequestParam String temperature, Model model) {
-        double convertedTemp = getTempConversion(temp, temperature);
+    public String temp(@RequestParam double temp, @RequestParam String unit, Model model) {
+        double convertedTemp = getTempConversion(temp, unit);
         model.addAttribute("result", convertedTemp);
         return "temp";
     }
@@ -74,10 +74,10 @@ public class ConverterController {
         };
     }
 
-    private double getTempConversion(Double temp, String temperature) {
-        return switch (temperature) {
+    private double getTempConversion(Double temp, String unit) {
+        return switch (unit) {
             case "celsius" -> (temp * 9 / 5) + 32;
-            case "fahrenheit " -> (temp - 32) * 5 / 9;
+            case "fahrenheit" -> (temp - 32) * 5 / 9;
             default -> 1;
         };
     }
