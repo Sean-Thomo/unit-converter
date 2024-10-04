@@ -37,6 +37,22 @@ public class ConverterController {
         return "length";
     }
 
+    @PostMapping("/length")
+    public String length(@RequestParam double length, @RequestParam String unit, Model model) {
+        double convertedLength = getLengthConversion(length, unit);
+        model.addAttribute("result", convertedLength);
+        return "length";
+    }
+
+    private double getLengthConversion(double length, String unit) {
+        return switch (unit) {
+            case "meters" -> length / 100;
+            case "kilometers" -> length / 1000;
+            case "inches" -> length / 2.54;
+            default -> 1;
+        };
+    }
+
     @GetMapping("/weight")
     public String weight() {
         return "weight";
