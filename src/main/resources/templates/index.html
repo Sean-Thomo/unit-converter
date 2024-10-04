@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <title>Unit Converter</title>
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Unit Converter</title>
+		<link rel="stylesheet" href="/css/styles.css" />
+	</head>
+	<body>
+		<h1>Currency Converter</h1>
 
-    <h1>Currency Converter</h1>
+		<a href="length">Length</a>
+		<a href="weight">Weight</a>
+		<a href="temp">Temperature</a>
 
-    <a href="length.html">Length</a>
-    <a href="weight.html">Weight</a>
-    <a href="temp.html">Temperature</a>
+		<form action="/currency" method="post">
+			<label for="amount">Enter the amount to convert</label>
+			<input type="number" name="amount" id="amount" required />
+			<label for="currency"></label>
+			<select name="currency" id="currency">
+				<option value="USD">ZAR to USD</option>
+				<option value="EUR">ZAR to EUR</option>
+			</select>
+			<button type="submit">Convert</button>
+		</form>
 
-    <form action="/currency" method="post">
-        <label for="amount">Enter the amount to convert</label>
-        <input type="number" name="amount" id="amount" required>
-        <label for="currency"></label>
-        <select name="currency" id="currency">
-            <option value="USD">ZAR to USD</option>
-            <option value="EUR">ZAR to EUR</option>
-        </select>
-        <button type="submit">Convert</button>
-    </form>
-
-    <div th:if="${result}">
-        <p>Converted Amount: <span th:text="${result}"></span></p>
-    </div>
-</body>
+		<div th:if="${result}">
+			<p>Converted Amount: <span th:text="${result}"></span></p>
+		</div>
+	</body>
 </html>

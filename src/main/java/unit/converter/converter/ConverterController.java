@@ -20,7 +20,7 @@ public class ConverterController {
         return "index";
     }
 
-    @GetMapping("/temp.html")
+    @GetMapping("/temp")
     public String temp() {
         return "temp";
     }
@@ -30,6 +30,16 @@ public class ConverterController {
         double convertedTemp = getTempConversion(temp, temperature);
         model.addAttribute("result", convertedTemp);
         return "temp";
+    }
+
+    @GetMapping("/length")
+    public String length() {
+        return "length";
+    }
+
+    @GetMapping("/weight")
+    public String weight() {
+        return "weight";
     }
 
     private double getTempConversion(Double temp, String temperature) {
