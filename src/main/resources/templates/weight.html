@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Weight Converter</title>
-</head>
-<body>
-<h1>Weight Converter</h1>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Weight Converter</title>
+	</head>
 
-<a href="length">Length</a>
-<a href="temp">Temperature</a>
-<a href="/">Currency</a>
+	<body>
+		<h1>Weight Converter</h1>
 
-<form action="/weight" method="post">
-    <label for="weight">Enter the weight to convert</label>
-    <input type="number" name="weight" id="weight" required />
-    <label for="unit"></label>
-    <select name="unit" id="unit">
-        <option value="pounds">Kilograms to Lbs</option>
-        <option value="grams">grams to Kilograms</option>
-        <option value="kilograms">Lbs to Kilograms</option>
-    </select>
-    <button type="submit">Convert</button>
-</form>
+		<a href="length">Length</a>
+		<a href="temp">Temperature</a>
+		<a href="/">Currency</a>
 
-<div th:if="${result}">
-    <p>Converted Weight: <span th:text="${result}"></span></p>
-</div>
-</body>
+		<form action="/weight" method="post">
+			<label for="weight">Enter the weight to convert</label>
+			<input type="number" name="weight" id="weight" required />
+			<label for="unit"></label>
+			<select name="unit" id="unit">
+				<option value="pounds">Kilograms to Lbs</option>
+				<option value="grams">grams to Kilograms</option>
+				<option value="kilograms">Lbs to Kilograms</option>
+			</select>
+			<button type="submit">Convert</button>
+		</form>
+
+		<div th:if="${result}">
+			<p>Converted Weight: <span th:text="${result}"></span></p>
+		</div>
+	</body>
 </html>

@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Title</title>
+	</head>
 
-    <h1>Length Converter</h1>
+	<body>
+		<h1>Length Converter</h1>
 
-    <a href="temp">Temprature</a>
-    <a href="weight">Weight</a>
-    <a href="/">Currency</a>
+		<a href="temp">Temprature</a>
+		<a href="weight">Weight</a>
+		<a href="/">Currency</a>
 
-    <form action="/length" method="post">
-        <label for="length">Enter the length to convert</label>
-        <input type="number" name="length" id="length" required />
-        <label for="unit"></label>
-        <select name="unit" id="unit">
-            <option value="meters">cm to meters</option>
-            <option value="inches">cm to inches</option>
-            <option value="kilometers">meters to kilometers</option>
-        </select>
-        <button type="submit">Convert</button>
-    </form>
+		<form action="/length" method="post">
+			<label for="length">Enter the length to convert</label>
+			<input type="number" name="length" id="length" required />
+			<label for="unit"></label>
+			<select name="unit" id="unit">
+				<option value="meters">cm to meters</option>
+				<option value="inches">cm to inches</option>
+				<option value="kilometers">meters to kilometers</option>
+			</select>
+			<button type="submit">Convert</button>
+		</form>
 
-    <div th:if="${result}">
-        <p>Converted Temperature: <span th:text="${result}"></span></p>
-    </div>
-
-</body>
+		<div th:if="${result}">
+			<p>Converted Temperature: <span th:text="${result}"></span></p>
+		</div>
+	</body>
 </html>
