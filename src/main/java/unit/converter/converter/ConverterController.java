@@ -49,6 +49,7 @@ public class ConverterController {
             case "meters" -> length / 100;
             case "kilometers" -> length / 1000;
             case "inches" -> length / 2.54;
+            case "foot" -> length * 3.281;
             default -> 1;
         };
     }
