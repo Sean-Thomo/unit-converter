@@ -78,6 +78,7 @@ public class ConverterController {
         return switch (unit) {
             case "celsius" -> (temp * 9 / 5) + 32;
             case "fahrenheit" -> (temp - 32) * 5 / 9;
+            case "kelvin" -> (temp + 273.15);
             default -> 1;
         };
     }
