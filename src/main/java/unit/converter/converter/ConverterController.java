@@ -71,6 +71,7 @@ public class ConverterController {
             case "kilograms" -> weight / 2.20462;
             case "pounds" -> weight * 2.205;
             case "grams" -> weight / 1000;
+            case "ounces" -> weight / 28.35;
             default -> 1;
         };
     }
